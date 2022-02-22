@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //선언을 먼저 해도 함수가 작동한다. (호이스팅 한다)
+        var a = func01();
+        var b = func02();
+        var c = func03();
+        console.log(a); //리턴이 없다면 undefined 실행
+        console.log(b);
+        console.log(c);
+
+        //function 함수이름() {}
+        function func01() {
+            console.log("func01실행");
+        }
+
+        function func02() {
+            console.log("func02실행");
+            return "func02"; //반환
+        }
+
+        function func03() {
+            console.log("func03실행");
+            return "func03"; //반환
+        }
+
+
+        //**********************************
+        //js는 함수를 변수에 저장할 수 있다
+
+        var d = func03;
+        d(); //호출
+
+    </script>
+    
+</body>
+</html>

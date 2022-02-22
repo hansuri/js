@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    
+   var num1 = 10;
+   if(num1 === 10) {
+       var num1 = 20;
+   }
+   
+   //js의 var변수의 범위는 함수이기 때문에
+   //즉, js는 함수속성을 띄고 있어서 함수가 아닌 중괄호를 벗어나도 여전히 중괄호 안에 들어있는 것 같은 효과
+   console.log(num1); //20
+
+
+
+   //함수 스코프
+   var num2 = 100;
+   function add() {
+       var num2 = 200;  //함수의 실행이 긑나면 함수안의 변수는 사라진다
+   }
+   add();
+
+   console.log(num2); //100
+
+
+
+
+   /** let 변수의 범위 - 블록스코프 **/
+   let num3 = 100;
+   if(num3 === 100) {
+    let num3 = 200;
+   }
+   console.log(num3); //100 - if문을 벗어나면 변수도 사라짐
+
+
+   let num4 = 100;
+   function add2() {
+       let num4 = 200;
+   }
+   add2();
+
+   console.log(num4); //100 - if문을 벗어나면 변수도 사라짐
+
+</script>
+
+</body>
+</html>
