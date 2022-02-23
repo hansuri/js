@@ -34,7 +34,44 @@
        console.log( person["inter"][1]);
        console.log( person["inter"][2]);
 
+
+
+       console.log("----------------------------------------------")
         
+
+
+       //반복문을 이용해서 각각의 요소를 출력하고,
+       //subject는 중첩 반복문으로 요소를 전부 출력하세요
+       var arr2 = [
+           {
+               name:'홍길동',
+               age:20,
+               subject:['자바','JSP','SPRING'],
+               birth:20200101
+           },
+           {
+               name:'이순신',
+               age:30,
+               subject:['CSS','SCRIPT'],
+               birth:20200202
+           }
+       ];
+
+      
+       
+       for(a=0; a < arr2.length; a++) {
+           console.log(arr2[a].name );
+           console.log(arr2[a].age );
+
+           for(var b =0; b < arr2[a].subject.length; b++) {
+               console.log(arr2[a].subject[b] );
+           }
+
+           console.log(arr2[a].birth );
+        }
+        
+        
+
 
     </script>
 

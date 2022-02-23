@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //위쪽
+        //확인창은 - confirm("질문") - 예 클릭시 true, 아니오 클릭시 false 반환
+        //locaton.href ="경로";
+
+        window.onload = function() {
+
+            var naver = document.getElementById("btn1");
+            naver.onclick = function() {
+                if(confirm("이동하시겠습니까?") ) {
+                    location.href="https://www.naver.com";
+                }
+                
+            }
+
+            var google = document.getElementById("btn2");
+            google.addEventListener("click", function() {
+                if(confirm("이동하시겠습니까?") ) {
+                    location.href="https://www.google.co.kr";
+                }
+            });
+
+    }
+
+    </script>
+
+    <h3>이벤트는 각각</h3>
+    
+    <button id="btn1">네이버로 이동</button>
+    <button id="btn2">구글로 이동</button>
+</body>
+</html>
