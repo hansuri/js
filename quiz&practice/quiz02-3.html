@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>카운트 기능(인라인 이벤트에서 this, innerHTML, value 사용)</h3>
+    
+    <input type="number" value="0" id="result">
+
+    <button type="button" value="1" onclick="func(this)">+</button>
+    <button type="button" value="1" onclick="func(this)">-</button>
+
+
+    <script>
+        function func(a) {
+
+            var result = document.getElementById("result");
+           
+            //a태그가 +를 가지고 있다면 증가
+            if(a.innerHTML == "+") { //++++++
+                result.value++;
+            
+            //a태그가 -를 가지고 있다면 감소
+            } else if(a.innerHTML == "-") {  //-------
+
+                if(result.value == 0) {
+                    alert("0보다 작을 수 없습니다")
+                    return;
+
+                } else {
+                    result.value--;
+                }
+            }
+        
+        }
+    </script>
+
+</body>
+</html>
