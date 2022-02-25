@@ -34,6 +34,7 @@
         
         var seat = document.getElementsByName("seat");
         var bth = document.getElementById("btn");
+        var bool = false;
 
         btn.onclick = function() {
             
@@ -42,12 +43,18 @@
             for(var i = 0; i < seat.length; i++) {
                 if(seat[i].checked == true) {
                     arr.push(seat[i].value);
+                    bool = true;
                 } 
                 
             }
 
-            var list = JSON.stringify(arr);
-            console.log(list);
+            if(bool) {
+                var list = JSON.stringify(arr);
+                console.log(list);
+            } else {
+                alert("좌석 선택은 필수입니다")
+            }
+
 
         }
 
