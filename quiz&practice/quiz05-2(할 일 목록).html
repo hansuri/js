@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>할 일 목록 만들어보기</h3>
+
+    <form class="nameForm">
+        <h3 class="nameTitle"></h3>
+        <input type="text" placeholder="이름을 입력하세요">
+        <button type="button" >확인</button>
+    </form>
+    
+    <form class="todoForm">
+        <input type="text" placeholder="할 일을 작성하세요">
+        <button type="button">확인</button>
+    </form>
+
+    <ul class="todoList">
+
+    </ul>
+
+
+
+    <script>
+
+        var nameForm = document.querySelector(".nameForm");
+        var nameTitle = nameForm.querySelector(".nameTitle");
+        var input = nameForm.querySelector("input");
+        var button = nameForm.querySelector("button");
+
+        button.onclick = function() {
+            nameTitle.innerHTML = input.value + "님 안녕하세요";
+            input.style.display = "none";
+            button.style.display = "none";
+        }
+
+
+        var todoList = document.querySelector(".todoList");
+        var todoForm = document.querySelector(".todoForm");
+        var todoInput = todoForm.querySelector("input");
+        var todoButton = todoForm.querySelector("button");
+        
+
+        todoButton.onclick = function() {
+
+            var text = todoInput.value;
+            todoInput.value = "";
+
+            //btn생성
+            var btn = document.createElement("button");
+            btn.innerHTML = "X";
+
+            //li생성
+            var li = document.createElement("li");
+            li.innerHTML = text;
+            li.appendChild(btn);
+
+                
+            todoList.appendChild(li);
+
+        }
+
+
+    </script>
+
+</body>
+</html>

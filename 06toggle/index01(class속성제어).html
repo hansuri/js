@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type="button" class="btn btn-default" id="btn">클래스 속성 제어하기</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+
+        // console.log(btn.type);
+        // console.log(btn.id);
+        // console.log(btn.class); //class는 키워드라서 접근 불가
+
+        //태그의 클래스이름은 className, classList 사용
+        console.dir(btn);
+        console.log(btn.className);
+        console.log(btn.classList);
+
+        //btn.className = "xxxx"; - 클래스 이름 바꾸기
+
+        btn.classList.add('xxxx'); // 클래스 이름을 추가한다
+        btn.classList.remove('btn'); // 클래스 이름을 삭제한다
+        console.log( btn.classList.contains("btn") ); // 클래스 이름의 포함여부를 확인한다 - true/false 로 도출
+        
+        btn.classList.toggle("aaa"); // 없다면 추가, 있다면 삭제
+        btn.classList.toggle("aaa"); // 없다면 추가, 있다면 삭제
+
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        .center { text-align: center; }
+        .content { margin: 0 auto; width: 800px; overflow: hidden; }
+        .left { float: left; width: 50%; box-sizing: border-box; }
+        .content, .inner { border: 1px solid #777; }
+        .content, .left { padding: 5px; }
+        
+        img { width: 100%; height: 100%; }
+        .inner { height: 300px; }
+
+    </style>
+
+</head>
+<body class="whole">
+
+    <article>
+        <div class="center">
+            <h3>토글형태 활용하기</h3>
+            <button type="button" class="btn" id="dark">어둡게보기</button>
+            <button type="button" class="btn" id="name">이름보기</button>
+        </div>
+    </article>
+
+    <hr>
+
+    <section>
+        <div class="content"> <!-- 외곽상자 -->
+            <div class="left"> <!-- 숨김상자 -->
+                <div class="inner"> <!-- 안쪽상자 -->
+                    <img src="1.jpg" alt="이미지">
+                </div>
+
+            </div>
+
+            <div class="left">
+                <div class="innerR">
+                    <p class="text">자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다.
+                        이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 
+                        또한 Node.js와 같은 런타임 환경과 같이 서버 프로그래밍에도 사용되고 있다. 
+                        자바스크립트는 본래 넷스케이프 커뮤니케이션즈 코퍼레이션의 브렌던 아이크(Brendan Eich)가 처음에는 모카(Mocha)라는 이름으로, 
+                        나중에는 라이브스크립트(LiveScript)라는 이름으로 개발하였으며, 최종적으로 자바스크립트가 되었다.</p>
+                    <a id="a" href="#">위키백과</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        var btnD = document.getElementById('dark'); 
+        var names = document.getElementById('name'); 
+        var whole = document.querySelector(".whole");
+
+        var innerR = document.querySelector(".innerR");
+        var text = document.querySelector(".text");
+
+        btnD.onclick = function() {
+
+            if(btnD.className == 'btn') {
+
+                whole.style.backgroundColor = "black";
+                whole.style.color = "white";
+                a.style.color = "white";
+
+                btnD.innerHTML = "밝게보기";
+                btnD.className = 'btnB'
+
+                
+            } else {
+                
+                whole.style.backgroundColor = "white";
+                whole.style.color = "black";
+                a.style.color = "black";
+                
+                dark.innerHTML = "어둡게보기";
+                dark.className = 'btn'
+            }
+        }
+
+
+        names.onclick = function() {
+
+            if(names.className == 'btn') {
+
+                innerR.innerHTML = "<p>홍길자<br>20세<br>능력단위<br>Java, Oracle, JSP, CSS, Javascript</p>"
+
+                names.innerHTML = "내용보기";
+                names.className = 'btnC';
+
+                
+            } else {
+                names.innerHTML = "이름보기";
+                names.className = 'btn';
+
+                innerR.innerHTML = "<p class='text'>자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다."
+                        + "이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. "
+                        + "또한 Node.js와 같은 런타임 환경과 같이 서버 프로그래밍에도 사용되고 있다. "
+                        + "자바스크립트는 본래 넷스케이프 커뮤니케이션즈 코퍼레이션의 브렌던 아이크(Brendan Eich)가 처음에는 모카(Mocha)라는 이름으로, "
+                        + "나중에는 라이브스크립트(LiveScript)라는 이름으로 개발하였으며, 최종적으로 자바스크립트가 되었다.</p>"
+                        + "<a id='a' href='#'>위키백과</a>"
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

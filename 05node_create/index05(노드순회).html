@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>이동</th>
+                <th>번호</th>
+                <th>이름</th>
+                <th>내용</th>
+            </tr>
+        </thead>
+
+        <tbody class="table">
+            <tr>
+                <td>
+                    <button type="button" onclick="down(this)">▼</button>
+                    <button type="button" onclick="up(this)">▲</button>
+                </td>
+                <td>1</td>
+                <td>홍길동</td>
+                <td>안녕하세요</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button type="button" onclick="down(this)">▼</button>
+                    <button type="button" onclick="up(this)">▲</button>
+                </td>
+                <td>2</td>
+                <td>이순신</td>
+                <td>반갑습니다</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button type="button" onclick="down(this)">▼</button>
+                    <button type="button" onclick="up(this)">▲</button>
+                </td>
+                <td>3</td>
+                <td>홍길자</td>
+                <td>노드선택하기</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button type="button" onclick="down(this)">▼</button>
+                    <button type="button" onclick="up(this)">▲</button>
+                </td>
+                <td>4</td>
+                <td>신사임당</td>
+                <td>앨리먼트순회</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button type="button" onclick="down(this)">▼</button>
+                    <button type="button" onclick="up(this)">▲</button>
+                </td>
+                <td>5</td>
+                <td>장보고</td>
+                <td>안녕히계세요</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        function down(node) {
+            //console.dir(node);
+
+            // console.log(node.parentElement); //부모노드 선택(엘리먼트 형식으로 선택)
+            // console.log(node.parentNode); //부모노드 선택(text, 주석, 엘리먼트 형식으로 선택)
+
+            // console.log(node.nextElementSibling); //다음 형제 노드 
+            // console.log(node.previousElementSibling); //이전 형제 노드
+
+            // console.log(node.firstElementChild); //첫 번째 자식요소
+            // console.log(node.lastElementChild); //마지막 자식요소
+
+            
+            //클릭한 버튼의 부모
+            var current = node.parentElement.parentElement; //2단계 이동
+            var next = current.nextElementSibling;
+
+            // console.log(current);
+            // console.log(next);
+
+
+            if(next == null) {
+                alert("마지막 행입니다");
+                return;
+            }
+
+            //insertBefore(삽입노드, 기준노드); //기준노드 앞에 삽입노드를 추가
+            var table = document.querySelector(".table");
+            table.insertBefore(next, current);
+
+        }
+
+
+        //up버튼 - insertBefore를 이용해서 처리
+        function up(node) {
+
+            var current = node.parentElement.parentElement;
+            var prev = current.previousElementSibling;
+
+            if(prev == null) {
+                alert("첫 번째 행입니다")
+                return;
+            } 
+
+            var table = document.querySelector(".table");
+            table.insertBefore(current, prev);
+
+        }
+    </script>
+
+</body>
+</html>
