@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main-banner {text-align: center;}
+        .main-banner img {display: none; position: relative; animation: fadeIn .3s linear;}
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                top: -50px;
+            } to {
+                opacity: 1;
+                top: 0px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- 인터벌 안에서 디스플레이 변경 -->
+    <div class="main-banner">
+        <img src="img/image1.jpg" width="300">
+        <img src="img/image2.jpg" width="300">
+        <img src="img/image3.jpg" width="300">
+    </div>
+
+    <script>
+
+        var stop;
+        var index = 0;
+        function dropImg() {
+
+            //main-banner의 자식 접근
+            var banner = document.querySelector(".main-banner");
+            banner.children[index].style.display = "inline";
+            index++;
+
+            //인터벌 중단 (3까지 증가하면 중단)
+            if(index === banner.children.length) clearInterval(stop);
+        }
+
+
+        
+
+        (function() {
+            stop = setInterval(dropImg, 500);
+
+        })();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //네비게이터 객체 - 브라우저에 대한 정보를 제공한다
+        //console.dir(navigator); 
+        //크로스브라우징 - 네비게이터를 이용해 userAgent를 확인 후 브라우저를 먼저 체크하고 그에따른 브라우저 디자인을 해주어햐 한다
+
+        var browser = navigator.userAgent.toLowerCase();
+        console.log(browser);
+        console.log(browser.indexOf("safari") ); //문자가 있다면 위치의 번호출력, 없다면 -1 반환
+
+        if(browser.indexOf("safari") != -1 ) {
+            //사파리 브라우저의 디자인
+            console.log("사파리");
+
+            //디자인 동적로드
+            var link = document.createElement("link");
+            link.href = "style.css";
+            link.rel = "stylesheet";
+            document.head.appendChild(link);
+
+        } else if(browser.indexOf("chrome") != -1 ) { //브라우저 별로 설정
+            //크롬 브라우저의 디자인
+            console.log("크롬");
+        }
+
+    </script>
+
+</body>
+</html>
